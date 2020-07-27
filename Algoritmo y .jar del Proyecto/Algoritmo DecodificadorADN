@@ -1,0 +1,24 @@
+Inicio
+    
+    var ADN_1 = ""
+    var ADN_2 = ""
+    
+    Procedimiento Proceso(var ADN1, var ADN2, var resultado)
+        var susecionADN = ""
+        ADN_1 = texto ADN1
+        ADN_2 = texto ADN2
+
+        para (var i = tamaño ADN_1, i >= 0 , i--)
+            para (var j = 0, j < i, j++)
+                si(ADN_2 contiene (ADN_1) y tamaño susecionADN < tamaño ADN_1)
+                    susecionADN = resultante de ADN_1
+                finsi
+            finpara
+        finpara
+
+        si(susecionADN != "")
+            resultado = texto susecionADN
+        entonces
+            resultado = "NO SE ENCONTRARON COINCIDENCIAS"
+        finsi
+Fin
