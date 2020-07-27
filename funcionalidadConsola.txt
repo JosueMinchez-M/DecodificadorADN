@@ -1,0 +1,46 @@
+package com.mycompany.decodificadoradn;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author joshua
+ */
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String ADN_1 = "";
+        String ADN_2 = "";
+        String secuencia = "";
+        //Pedimos por teclado la primer secuencia de ADN
+        System.out.println("Escribe la Primer Secuencia de ADN: ");
+        ADN_1 = entrada.nextLine();
+        //Pedimos por teclado la segunda secuencia de ADN
+        System.out.println("Escribe la Segunda Secuencia de ADN: ");
+        ADN_2 = entrada.nextLine();
+        //Con el ciclo for examinamos de derecha a izquierda la secuencia de ADN ADN_1
+        for (int i = ADN_1.length(); i >= 0 ; i--) {
+            //Con este siguiente ciclo for se examina de izquierda a derecha la secuencia de ADN ADN_2
+            for (int j = 0; j < i; j++) {
+                /*Con esta sentencia examinamos con el tamaño del nombre de ADN_1, cada vez  
+                que esto se haga, se compara el caracter que se examina en cada for con lo
+                que se ingresa en ADN_2. Entonces se tomaran los caracteres que se repiten
+                en secuencia entre las dos palabras*/
+                if(ADN_2.contains(ADN_1.substring(j, i)) && secuencia.length() < ADN_1.substring(j, i).length()){
+                    //La secuencia que se extrae entre lo que se ingreso en ADN_1 Y ADN_2 se guarda en "secuencia"
+                    secuencia = ADN_1.substring(j, i);
+                }
+            }
+        }
+        //Se muestra en pantalla la palabra encontrada o en su defecto un aviso de que no se ha encontrado
+        if(secuencia != ""){
+            System.out.println("\n");
+            System.out.println("El conjunto ordenado de bases adyacentes de mayor tamaño es: " + secuencia);
+        }else{
+            System.out.println("\n");
+            System.out.println("+++|NO SE ENCONTRARON COINCIDENCIAS|+++");
+        }
+    }
+    
+}
