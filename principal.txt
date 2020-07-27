@@ -1,0 +1,2 @@
+Aqui se agregara el funcionamiento en consola
+y la aplicación con interfaz gráfica
